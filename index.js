@@ -1701,8 +1701,13 @@ let data = [
 ];
 
 // 1)While chaining array methods, print the name of each agent who's role is Duelist
-
-const role = data.filter((role) => role.displayName == "Duelist");
-role.forEach((duelist) => console.log(duelist.displayName));
+const duelists = data
+  .filter((person) => person.role.displayName === "Duelist")
+  .forEach((roles) => console.log(roles.displayName));
 
 // 2) While chaining array methods, print the name of each agent who's character tags include "Mobility"
+console.log("line break")
+
+const mobile = data
+  .filter((characters) => characters.characterTags.includes("Mobility"))
+  .forEach((mobile) => console.log(mobile.displayName))
